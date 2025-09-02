@@ -1,0 +1,360 @@
+/* Variables CSS */
+:root {
+    --color-header: #474242;
+    --color-footer: #222;
+    --color-footer-text: #ddd;
+    --color-bg-gradient-top: #0b0b2b;
+    --color-bg-gradient-mid: #1b2735;
+    --color-bg-gradient-bottom: #090a0f;
+    --color-text: #fff;
+    --color-link: #0066cc;
+    --color-card-bg: #181818;
+    --color-success: #28a745;
+    --color-danger: #dc3545;
+    --color-multicolor-1: #ff0057;
+    --color-multicolor-2: #fffd44;
+    --color-multicolor-3: #00ffae;
+    --color-multicolor-4: #2c6fff;
+}
+/* Fondo animado y reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(to bottom, var(--color-bg-gradient-top), var(--color-bg-gradient-mid) 70%, var(--color-bg-gradient-bottom));
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+
+}
+
+/* Fondo animado de estrellas */
+.stars {
+    width: 1px;
+    height: 1px;
+    position: absolute;
+    background: white;
+    box-shadow: 2vw 5vh 2px white, 10vw 8vh 2px white, 15vw 15vh 1px white,
+        22vw 22vh 1px white, 28vw 12vh 2px white, 32vw 32vh 1px white,
+        38vw 18vh 2px white, 42vw 35vh 1px white, 48vw 25vh 2px white,
+        53vw 42vh 1px white, 58vw 15vh 2px white, 63vw 38vh 1px white,
+        68vw 28vh 2px white, 73vw 45vh 1px white, 78vw 32vh 2px white,
+        83vw 48vh 1px white, 88vw 20vh 2px white, 93vw 52vh 1px white,
+        98vw 35vh 2px white, 5vw 60vh 1px white, 12vw 65vh 2px white,
+        18vw 72vh 1px white, 25vw 78vh 2px white, 30vw 85vh 1px white,
+        35vw 68vh 2px white, 40vw 82vh 1px white, 45vw 92vh 2px white,
+        50vw 75vh 1px white, 55vw 88vh 2px white, 60vw 95vh 1px white,
+        65vw 72vh 2px white, 70vw 85vh 1px white, 75vw 78vh 2px white,
+        80vw 92vh 1px white, 85vw 82vh 2px white, 90vw 88vh 1px white,
+        95vw 75vh 2px white;
+    animation: twinkle 8s infinite linear;
+    z-index: 1;
+}
+
+.stars::after {
+    content: "";
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    background: white;
+    box-shadow: 8vw 12vh 2px white, 16vw 18vh 1px white, 24vw 25vh 2px white,
+        33vw 15vh 1px white, 41vw 28vh 2px white, 49vw 35vh 1px white,
+        57vw 22vh 2px white, 65vw 42vh 1px white, 73vw 28vh 2px white,
+        81vw 48vh 1px white, 89vw 32vh 2px white, 97vw 45vh 1px white,
+        3vw 68vh 2px white, 11vw 75vh 1px white, 19vw 82vh 2px white,
+        27vw 88vh 1px white, 35vw 72vh 2px white, 43vw 85vh 1px white,
+        51vw 92vh 2px white, 59vw 78vh 1px white;
+    animation: twinkle 6s infinite linear reverse;
+}
+
+.shooting-star {
+    position: absolute;
+    width: 100px;
+    height: 2px;
+    background: linear-gradient(90deg, white, transparent);
+    animation: shoot 3s infinite ease-in;
+    z-index: 2;
+}
+
+.shooting-star:nth-child(2) {
+    top: 20%;
+    left: -100px;
+    animation-delay: 0s;
+}
+
+.shooting-star:nth-child(3) {
+    top: 35%;
+    left: -100px;
+    animation-delay: 1s;
+}
+
+.shooting-star:nth-child(4) {
+    top: 50%;
+    left: -100px;
+    animation-delay: 2s;
+}
+
+.shooting-star:nth-child(5) {
+    top: 65%;
+    left: -100px;
+    animation-delay: 1.5s;
+}
+
+.shooting-star:nth-child(6) {
+    top: 80%;
+    left: -100px;
+    animation-delay: 2.5s;
+}
+
+@keyframes twinkle {
+
+    0%,
+    100% {
+        opacity: 0.8;
+    }
+
+    50% {
+        opacity: 0.4;
+    }
+}
+
+@keyframes shoot {
+    0% {
+        transform: translateX(0) translateY(0) rotate(25deg);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateX(120vw) translateY(50vh) rotate(25deg);
+        opacity: 0;
+    }
+}
+
+/* Contenido principal */
+.wrapper {
+    position: relative;
+    z-index: 10;
+    padding-bottom: 80px;
+    /* espacio para el footer fijo en desktop */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+header {
+    color: var(--color-text);
+    background: var(--color-header);
+    padding: 20px;
+    text-align: center;
+}
+
+.encabezado {
+    margin: 2px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+section {
+    padding: 20px;
+    max-width: 800px;
+    margin: auto;
+}
+
+.contenido {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+/* Imagen circular */
+.img-circular {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Texto y animación multicolor */
+.nombre,
+.profesion,
+.subtitulo,
+.descripcion {
+    text-align: center;
+    color: var(--color-text);
+    transition: background 0.5s, color 0.5s;
+}
+
+.wrapper:hover .nombre,
+.wrapper:hover .profesion,
+.contenido:hover .subtitulo,
+.contenido:hover .descripcion {
+    background: linear-gradient(90deg, var(--color-multicolor-1), var(--color-multicolor-2), var(--color-multicolor-3), var(--color-multicolor-4), var(--color-multicolor-1));
+    background-size: 400% 400%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    animation: multicolor 6s linear infinite;
+}
+
+@keyframes multicolor {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Enlaces */
+a {
+    display: inline-block;
+    margin-top: 10px;
+    color: var(--color-link);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Footer fijo en desktop, estático en móvil */
+footer {
+    background: var(--color-footer);
+    color: var(--color-footer-text);
+    text-align: center;
+    padding: 15px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    margin-top: 0;
+    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.08);
+    z-index: 100;
+}
+
+/* Navbar y menú lateral */
+.navbar,
+#sideMenu {
+    background-color: var(--color-header) !important; /* Usa el color del header */
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    body {
+        min-height: 100vh;
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+
+    .wrapper {
+        padding-bottom: 0;
+        min-height: 100vh;
+    }
+
+    .encabezado {
+        flex-direction: column;
+    }
+
+    .nombre,
+    .profesion,
+    .subtitulo,
+    .descripcion {
+        text-align: center;
+        font-size: 1.1em;
+    }
+
+    .contenido {
+        flex-direction: column;
+        align-items: stretch;
+        padding-bottom: 20px;
+        margin-bottom: 10px;
+    }
+
+    section {
+        padding: 10px;
+        max-width: 100%;
+    }
+
+    .img-circular {
+        width: 120px;
+        height: 120px;
+    }
+
+    footer {
+        position: static;
+        box-shadow: none;
+        margin-top: 0;
+        padding-bottom: 10px;
+        padding-top: 10px;
+        background: var(--color-footer);
+        color: var(--color-footer-text);
+    }
+}
+
+@media (max-width: 768px) {
+  .navbar .container-fluid {
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 10px;
+  }
+  .nombre, .profesion {
+    text-align: center;
+    width: 100%;
+  }
+  .navbar-toggler {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+}
+
+/* Lista de habilidades */
+#lista-habilidades {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Centrado de tarjetas del blog en nuevo-articulo */
+.blog-card-center {
+    width: 300px;
+    max-height: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    overflow-y: auto;
+}
+
+/* Centrado de contenido dentro de las tarjetas del blog */
+.blog-card-center .card-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+
+#lista-habilidades li {
+    margin-bottom: 10px;
+}
