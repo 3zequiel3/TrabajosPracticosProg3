@@ -1,0 +1,120 @@
+/* 6. Variables CSS */
+:root {
+  --color-fondo: #f0f4f8;
+  --color-texto: #222;
+  --color-acento: #0077cc;
+}
+
+/* 1. General */
+body {
+  background: var(--color-fondo);
+  color: var(--color-texto);
+  font-family: Arial, sans-serif;
+  margin: 20px;
+}
+
+/* 2. Selectores */
+#parrafo-id {
+  color: var(--color-acento);
+  font-weight: bold;
+}
+
+.parrafo-clase {
+  background: #e0e0e0;
+  padding: 5px;
+  border-left: 4px solid var(--color-acento);
+}
+
+p {
+  font-size: 1em;
+}
+
+/* 3. Modificación de Texto */
+.titulo-sombra {
+  text-transform: uppercase;
+  text-shadow: 2px 2px 5px #aaa;
+  letter-spacing: 2px;
+}
+
+.parrafo-espaciado {
+  line-height: 2.2;
+  letter-spacing: 6px;
+}
+
+.cita {
+  font-style: italic;
+  font-family: 'Georgia', serif;
+  background: #fffbe6;
+  border-left: 4px solid var(--color-acento);
+  padding: 10px;
+  margin: 10px 0;
+}
+
+/* 4. Modelo de Caja: Tarjeta */
+.tarjeta {
+  border: 2px solid var(--color-acento);
+  padding: 16px;
+  margin: 12px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 2px 4px 12px rgba(0,0,0,0.08);
+  width: 220px;
+  display: block;
+  box-sizing: border-box; /* Ver comentario abajo */
+}
+
+/* Diferencia entre box-sizing: border-box y content-box:
+   - border-box: el ancho y alto incluyen el padding y el borde.
+   - content-box: el ancho y alto solo incluyen el contenido, el padding y el borde se suman aparte.
+*/
+
+/* Cuadrado decorativo en la tarjeta */
+.cuadrado {
+  width: 40px;
+  height: 40px;
+  background: var(--color-acento);
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+/* 5. Display y Visibility */
+.galeria-block .tarjeta {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.galeria-inline .tarjeta {
+  display: inline;
+  margin-right: 8px;
+  /* Al ser inline, no respeta el modelo de caja completo */
+}
+
+.galeria-inlineblock .tarjeta {
+  display: inline-block;
+  margin-right: 8px;
+  vertical-align: top;
+}
+
+/* Ocultar botones */
+#btn-none {
+  display: none;
+}
+
+#btn-hidden {
+  visibility: hidden;
+}
+
+/* 6. Variables CSS: Tema de Colores en perfil */
+.perfil {
+  background: var(--color-fondo);
+  color: var(--color-texto);
+  border-color: var(--color-acento);
+}
+
+/* Cambia el tema de colores fácilmente modificando las variables en :root:
+:root {
+  --color-fondo: #222;
+  --color-texto: #f0f4f8;
+  --color-acento: #ff6600;
+}
+*/

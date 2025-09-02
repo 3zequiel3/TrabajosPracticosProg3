@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>TP1 - Introducción a CSS</title>
+  <link rel="stylesheet" href="css/tp1.css">
+</head>
+<body>
+  <h1>Trabajo Práctico 1: Introducción a CSS</h1>
+  <p>
+    CSS (Cascading Style Sheets) es un lenguaje que permite definir la apariencia y el diseño de páginas web escritas en HTML. Sirve para separar el contenido de la presentación, facilitando la creación de sitios atractivos, ordenados y accesibles.
+  </p>
+
+  <!-- 2. Selectores en CSS -->
+  <h2>2. Selectores en CSS</h2>
+  <p id="parrafo-id">Este párrafo tiene un ID.</p>
+  <p class="parrafo-clase">Este párrafo tiene una clase.</p>
+  <p>Este párrafo solo tiene la etiqueta &lt;p&gt;.</p>
+
+  <!-- 3. Modificación de Texto -->
+  <h2>3. Modificación de Texto</h2>
+  <h3 class="titulo-sombra">Título con sombra y mayúsculas</h3>
+  <p class="parrafo-espaciado">
+    Este párrafo tiene un interlineado amplio y mucho espacio entre letras para mostrar el efecto de las propiedades line-height y letter-spacing.
+  </p>
+  <blockquote class="cita">
+    "La creatividad es la inteligencia divirtiéndose." - Albert Einstein
+  </blockquote>
+
+  <!-- 4. Modelo de Caja -->
+  <h2>4. Modelo de Caja: Tarjeta</h2>
+  <div class="tarjeta">
+    <div class="cuadrado"></div>
+    <h4>Tarjeta de ejemplo</h4>
+    <p>Esta es una tarjeta con modelo de caja aplicado.</p>
+  </div>
+
+  <!-- 5. Display y Visibility -->
+  <h2>5. Display y Visibility: Galería de Tarjetas</h2>
+  <div class="galeria galeria-block">
+    <div class="tarjeta">Tarjeta 1</div>
+    <div class="tarjeta">Tarjeta 2</div>
+    <div class="tarjeta">Tarjeta 3</div>
+  </div>
+  <h4>Display: inline</h4>
+  <div class="galeria galeria-inline">
+    <div class="tarjeta">Tarjeta 1</div>
+    <div class="tarjeta">Tarjeta 2</div>
+    <div class="tarjeta">Tarjeta 3</div>
+  </div>
+  <h4>Display: inline-block</h4>
+  <div class="galeria galeria-inlineblock">
+    <div class="tarjeta">Tarjeta 1</div>
+    <div class="tarjeta">Tarjeta 2</div>
+    <div class="tarjeta">Tarjeta 3</div>
+  </div>
+
+  <button id="btn-none">Botón oculto con display: none</button>
+  <button id="btn-hidden">Botón oculto con visibility: hidden</button>
+  <p>
+    <strong>¿Cuál es la diferencia?</strong><br>
+    <em>display: none</em> elimina el elemento del flujo del documento, no ocupa espacio.<br>
+    <em>visibility: hidden</em> oculta el elemento pero sigue ocupando espacio en la página.
+  </p>
+
+  <!-- 6. Variables CSS -->
+  <h2>6. Variables CSS: Tema de Colores</h2>
+  <div class="tarjeta perfil">
+    <div class="cuadrado"></div>
+    <h4>Perfil</h4>
+    <p>Esta tarjeta usa variables CSS para colores.</p>
+  </div>
+</body>
+</html>
