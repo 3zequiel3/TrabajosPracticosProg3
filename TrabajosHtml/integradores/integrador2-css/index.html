@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>MiTienda – TP Integrador CSS</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header" id="top">
+      <div class="container site-header__bar">
+        <a href="#top" class="site-header__logo" aria-label="Inicio">
+          <span class="site-header__mark" aria-hidden="true">M</span>
+          <span>MiTienda</span>
+        </a>
+
+        <button
+          class="site-header__toggle"
+          aria-controls="primary-nav"
+          aria-expanded="false"
+          aria-label="Abrir menú"
+        >
+          <img src="/static/assets/icons/menu.svg" alt="Menú" />
+        </button>
+
+        <nav class="site-nav" id="primary-nav" aria-label="Principal">
+          <a href="#novedades">Novedades</a>
+          <a href="#ofertas">Ofertas</a>
+          <a href="#contacto">Contacto</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <div class="container top-row">
+        <section class="panel col col--left" aria-labelledby="titulo-botones">
+          <h2 id="titulo-botones">1) Sistema de Botones</h2>
+          <div class="btn-group" role="group" aria-label="Ejemplos de botones">
+            <button class="btn btn--primary btn--icon" type="button">
+              Primario
+            </button>
+            <button class="btn btn--secondary" type="button">Secundario</button>
+            <button class="btn btn--outline" type="button">Outline</button>
+            <button class="btn btn--danger" type="button">Peligro</button>
+            <button class="btn btn--icon" type="button">
+              <img
+                src="/static/assets/icons/search.svg"
+                alt=""
+                aria-hidden="true"
+              />
+              Con icono
+            </button>
+            <button class="btn btn--primary" type="button" disabled>
+              Deshabilitado
+            </button>
+          </div>
+        </section>
+
+        <section class="panel col col--right" aria-labelledby="titulo-producto">
+          <h2>2) Tarjeta de Producto</h2>
+
+          <article
+            class="product-card"
+            itemscope
+            itemtype="https://schema.org/Product"
+          >
+            <div class="product-card__media">
+              <img
+                class="product-card__img"
+                src="/static/assets/img/zapatillas.webp"
+                alt="Zapatillas deportivas color blanco con detalles azules"
+                itemprop="image"
+              />
+              <span class="product-card__badge">Nuevo</span>
+            </div>
+
+            <div class="product-card__info">
+              <header>
+                <h3
+                  id="titulo-producto"
+                  class="product-card__title"
+                  itemprop="name"
+                >
+                  Zapatillas Runner Pro
+                </h3>
+                <p class="product-card__desc" itemprop="description">
+                  Confeccionadas con malla respirable y suela de alto rebote
+                  para máximo confort.
+                </p>
+              </header>
+
+              <div
+                class="product-card__prices"
+                itemprop="offers"
+                itemscope
+                itemtype="https://schema.org/Offer"
+              >
+                <meta itemprop="priceCurrency" content="ARS" />
+                <strong class="product-card__price" itemprop="price"
+                  >$ 24.999</strong
+                >
+                <span class="product-card__old-price">$ 29.999</span>
+              </div>
+
+              <div class="btn-group">
+                <button class="btn btn--primary btn--icon" type="button">
+                 Comprar Ahora
+                </button>
+                <button class="btn btn--outline" type="button">
+                  <img
+                    src="/static/assets/icons/add.svg"
+                    alt=""
+                    aria-hidden="true"
+                  />
+                  Añadir
+                </button>
+              </div>
+            </div>
+          </article>
+        </section>
+      </div>
+
+      <section class="container" id="novedades">
+        <div class="panel relleno">
+          <h2>Novedades</h2>
+          <p class="code-note">
+            Sección de relleno para probar el menú.
+          </p>
+        </div>
+      </section>
+
+      <section class="container" id="ofertas">
+        <div class="panel relleno">
+          <h2>Ofertas</h2>
+          <p class="code-note">Otra sección de relleno</p>
+        </div>
+      </section>
+
+      <section class="container" id="contacto">
+        <div class="panel relleno">
+          <h2>Contacto</h2>
+          <p class="code-note">Mas contenido de ejemplo.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        © <span id="year"></span> Integrador CSS.
+      </div>
+    </footer>
+
+    <script>
+      const toggle = document.querySelector(".site-header__toggle");
+      const nav = document.querySelector(".site-nav");
+      toggle?.addEventListener("click", () => {
+        const isOpen = nav.classList.toggle("is-open");
+        toggle.setAttribute("aria-expanded", String(isOpen));
+      });
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
