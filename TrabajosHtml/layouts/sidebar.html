@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="css/sidebar.css" />
 <nav class="navbar navbar-dark">
   <div class="container-fluid d-flex flex-row justify-content-between align-items-center flex-wrap">
     <h1 class="nombre m-0">
@@ -21,9 +22,7 @@
     class="bg-dark position-fixed top-0 end-0 vh-100"
     style="width: 250px; display: none; z-index: 200"
   >
-    <div
-      class="d-flex justify-content-between align-items-center p-3 border-bottom"
-    >
+    <div class="d-flex justify-content-between align-items-center p-3 border-bottom">
       <span class="fs-5 text-light">Menú</span>
       <button
         type="button"
@@ -32,28 +31,49 @@
         aria-label="Cerrar"
       ></button>
     </div>
-    <ul class="nav flex-column p-3">
-      <li class="nav-item mb-2">
-        <a class="nav-link text-light" href="index.html"
-          ><i class="bi bi-house"></i> Inicio</a>
-      </li>
-      <li class="nav-item mb-2">
-        <a class="nav-link text-light" href="registro.html"
-          ><i class="bi bi-person-plus"></i> Registro</a>
-      </li>
-      <li class="nav-item mb-2">
-        <a class="nav-link text-light" href="blog.html"
-          ><i class="bi bi-journal-text"></i> Blog</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link text-light" href="nuevo-articulo.html"
-          ><i class="bi bi-pencil-square"></i> Crear/Eliminar Artículo</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link text-light" href="tp1-css.html"
-          ><i class="bi bi-person"></i> TP1 CSS</a>
-      </li>
-    </ul>
+    <div class="p-3">
+      <!-- Grupo HTML -->
+      <button class="grupo-btn text-info fw-bold mb-2 d-block" type="button" id="grupoHtmlBtn">
+        HTML <span class="bi bi-chevron-down"></span>
+      </button>
+      <ul class="nav flex-column mb-3 grupo-list" id="grupoHtmlList" style="display: none;">
+        <li class="nav-item mb-2">
+          <a class="nav-link text-light" href="index.html"><i class="bi bi-house"></i> Inicio</a>
+        </li>
+        <li class="nav-item mb-2">
+          <a class="nav-link text-light" href="blog.html"><i class="bi bi-journal-text"></i> Blog</a>
+        </li>
+        <li class="nav-item mb-2">
+          <a class="nav-link text-light" href="registro.html"><i class="bi bi-person-plus"></i> Registro</a>
+        </li>
+        <li class="nav-item mb-2">
+          <a class="nav-link text-light" href="nuevo-articulo.html"><i class="bi bi-pencil-square"></i> Crear/Eliminar Artículo</a>
+        </li>
+      </ul>
+      <!-- Grupo CSS -->
+      <button class="grupo-btn text-success fw-bold mb-2 d-block" type="button" id="grupoCssBtn">
+        CSS <span class="bi bi-chevron-down"></span>
+      </button>
+      <ul class="nav flex-column grupo-list" id="grupoCssList" style="display: none;">
+        <li class="nav-item mb-2">
+          <a class="nav-link text-light" href="tp1-css.html"><i class="bi bi-person"></i> TP1 CSS</a>
+        </li>
+        <li class="nav-item mb-2">
+          <a class="nav-link text-light" href="productos.html"><i class="bi bi-box"></i> TP2 Productos</a>
+        </li>
+      </ul>
+      <button class="grupo-btn text-success fw-bold mb-2 d-block" type="button" id="grupoIntegradoresBtn">
+        Integradores <span class="bi bi-chevron-down"></span>
+      </button>
+      <ul class="nav flex-column grupo-list" id="grupoIntegradoresList" style="display: none;">
+        <li class="nav-item mb-2">
+          <a class="nav-link text-light" href="integradores/Integrador1-labuenamesa/index.html"><i class="bi bi-person"></i> Integrador 1 - La Buena Mesa</a>
+        </li>
+        <!-- <li class="nav-item mb-2">
+          <a class="nav-link text-light" href="productos.html"><i class="bi bi-box"></i></a>
+        </li> -->
+      </ul>
+    </div>
   </div>
   <div
     id="menuBackdrop"
@@ -66,3 +86,18 @@
     "
   ></div>
 </nav>
+<script>
+  // Desplegables de grupos
+  document.getElementById('grupoHtmlBtn').onclick = function () {
+    const htmlList = document.getElementById('grupoHtmlList');
+    htmlList.style.display = htmlList.style.display === 'none' ? 'block' : 'none';
+  };
+  document.getElementById('grupoCssBtn').onclick = function () {
+    const cssList = document.getElementById('grupoCssList');
+    cssList.style.display = cssList.style.display === 'none' ? 'block' : 'none';
+  };
+  document.getElementById('grupoIntegradoresBtn').onclick = function () {
+    const integradoresList = document.getElementById('grupoIntegradoresList');
+    integradoresList.style.display = integradoresList.style.display === 'none' ? 'block' : 'none';
+  };
+</script>

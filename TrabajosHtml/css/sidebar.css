@@ -1,0 +1,130 @@
+/* Estilos exclusivos para el sidebar/layout importado */
+
+/* Navbar principal */
+#layout-navbar .navbar {
+  background-color: var(--color-header, #474242) !important;
+  color: var(--color-text, #fff);
+  border-bottom: 2px solid #222;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  font-family: Arial, sans-serif;
+  z-index: 100;
+}
+
+/* Contenido del navbar */
+#layout-navbar .container-fluid {
+  padding: 0.5rem 1.5rem;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+#layout-navbar .nombre,
+#layout-navbar .profesion {
+  color: var(--color-text, #fff);
+  font-size: 1.3em;
+  font-weight: bold;
+  text-align: center;
+  margin: 0 10px;
+}
+
+#layout-navbar .icono-nombre,
+#layout-navbar .icono-profesion {
+  font-size: 1.2em;
+  margin-right: 6px;
+}
+
+#layout-navbar .navbar-toggler {
+  border: none;
+  background: transparent;
+  color: #fff;
+  margin-left: 10px;
+}
+
+/* Menú lateral */
+#sideMenu {
+  background: #222 !important;
+  color: #fff;
+  width: 250px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  z-index: 200;
+  box-shadow: 2px 0 8px rgba(0,0,0,0.08);
+  display: none;
+}
+
+#sideMenu .border-bottom {
+  border-bottom: 1px solid #444 !important;
+}
+
+#sideMenu .nav-link {
+  color: #fff !important;
+  font-size: 1.1em;
+  padding: 8px 0;
+  transition: background 0.2s, color 0.2s;
+}
+
+#sideMenu .nav-link:hover {
+  background: #0077cc;
+  color: #fff !important;
+  text-decoration: underline;
+}
+
+#sideMenu .btn-close {
+  filter: invert(1);
+}
+
+#menuBackdrop {
+  background: rgba(0,0,0,0.5);
+  z-index: 150;
+  display: none;
+}
+
+/* Botones de grupo desplegable en el menú lateral */
+#sideMenu .grupo-btn {
+  background: transparent;
+  color: inherit;
+  border: none;
+  box-shadow: none;
+  font-size: 1em;
+  font-weight: bold;
+  padding: 6px 0;
+  margin-bottom: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: color 0.2s, background 0.2s;
+}
+
+#sideMenu .grupo-btn .bi {
+  margin-left: 6px;
+  font-size: 1em;
+}
+
+#sideMenu .grupo-btn:focus {
+  outline: none;
+  color: #0077cc;
+}
+
+#sideMenu .grupo-btn:hover {
+  color: #0077cc;
+  background: rgba(0,0,0,0.08);
+}
+
+/* Responsive ajustes para navbar */
+@media (max-width: 768px) {
+  #layout-navbar .container-fluid {
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 10px;
+  }
+  #layout-navbar .nombre, 
+  #layout-navbar .profesion {
+    text-align: center;
+    width: 100%;
+  }
+  #layout-navbar .navbar-toggler {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }}

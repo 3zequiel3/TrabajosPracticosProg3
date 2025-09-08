@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
             .then(res => res.text())
             .then(html => {
                 layoutDiv.innerHTML = html;
-                // Reasignar eventos del menú hamburguesa
+                // Menú hamburguesa lateral
                 const menuBtn = document.getElementById('menuBtn');
                 const sideMenu = document.getElementById('sideMenu');
                 const closeMenu = document.getElementById('closeMenu');
@@ -23,6 +23,28 @@ document.addEventListener('DOMContentLoaded', function () {
                     menuBackdrop.onclick = function () {
                         sideMenu.style.display = 'none';
                         menuBackdrop.style.display = 'none';
+                    };
+                }
+                // Grupos desplegables
+                const htmlBtn = document.getElementById('grupoHtmlBtn');
+                const htmlList = document.getElementById('grupoHtmlList');
+                const cssBtn = document.getElementById('grupoCssBtn');
+                const cssList = document.getElementById('grupoCssList');
+                const integradoresBtn = document.getElementById('grupoIntegradoresBtn');
+                const integradoresList = document.getElementById('grupoIntegradoresList');
+                if (htmlBtn && htmlList) {
+                    htmlBtn.onclick = function () {
+                        htmlList.style.display = htmlList.style.display === 'none' ? 'block' : 'none';
+                    };
+                }
+                if (cssBtn && cssList) {
+                    cssBtn.onclick = function () {
+                        cssList.style.display = cssList.style.display === 'none' ? 'block' : 'none';
+                    };
+                }
+                if (integradoresBtn && integradoresList) {
+                    integradoresBtn.onclick = function () {
+                        integradoresList.style.display = integradoresList.style.display === 'none' ? 'block' : 'none';
                     };
                 }
             });
